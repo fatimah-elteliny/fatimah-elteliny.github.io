@@ -4,9 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fatimah Elteliny — Consulting Portfolio</title>
+<meta name="description" content="Management consultant in Riyadh. Governance, enterprise risk, quality management, customer experience and operational excellence for Saudi government, sovereign, banking and regulated clients. ISO 10002/10004 certified via TÜV. Lean Six Sigma Black Belt. Arabic and English.">
+<meta property="og:title" content="Fatimah Elteliny — Consulting Portfolio">
+<meta property="og:description" content="Governance, risk, quality, customer experience and operational excellence. Riyadh. Eleven years across government, sovereign, banking and regulated sectors.">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://fatimah-elteliny.github.io/">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#141E2B; --card:#1A2836; --surface:#1F3040; --border:#2A3E52;
@@ -34,6 +40,45 @@
   .hero-sub em{color:var(--white);font-style:normal;border-bottom:1px solid var(--teal);padding-bottom:2px}
   .hero-thesis{font-size:15.5px;color:var(--text-muted);max-width:58ch;line-height:1.65;padding-top:20px;border-top:1px solid var(--border)}
 
+  /* ---- hero ---- */
+  .hero-grid{display:grid;grid-template-columns:170px 1fr;gap:34px;align-items:start}
+  .hero-photo img{width:170px;height:210px;object-fit:cover;object-position:center top;border:1px solid var(--border);border-bottom:3px solid var(--teal);display:block}
+  .lang-toggle{
+    float:right;background:transparent;border:1px solid var(--teal);color:var(--teal);
+    font-family:var(--mono);font-size:11px;letter-spacing:.08em;padding:7px 14px;
+    cursor:pointer;transition:background .2s,color .2s;
+  }
+  .lang-toggle:hover{background:var(--teal);color:var(--bg)}
+  @media (max-width:640px){
+    .hero-grid{grid-template-columns:1fr;gap:22px}
+    .hero-photo img{width:130px;height:160px}
+  }
+
+  /* ---- RTL ---- */
+  body.rtl{direction:rtl;font-family:'IBM Plex Sans Arabic','Inter',system-ui,sans-serif}
+  body.rtl .hero-name,body.rtl .sec-title,body.rtl .record-head h3,body.rtl .footer h2{font-family:'IBM Plex Sans Arabic',var(--display),serif;font-weight:600}
+  /* mono has no Arabic — swap it out wherever Arabic text lands */
+  body.rtl .cap,body.rtl .sec-meta,body.rtl .tag,body.rtl .track-when,body.rtl .track-org,
+  body.rtl .cred-list .yr,body.rtl .sec-v,body.rtl .lbl,body.rtl .stamp,body.rtl .nda,
+  body.rtl .footer-grid .v,body.rtl .cap-card .fw b{
+    font-family:'IBM Plex Sans Arabic','Inter',system-ui,sans-serif;
+    letter-spacing:0;
+  }
+  body.rtl .cap{font-size:11.5px;line-height:1.8}
+  body.rtl .sec-meta{font-size:12.5px}
+  body.rtl .sec-v{font-size:14px}
+  body.rtl .nda{font-size:11.5px;line-height:1.9}
+  body.rtl .lang-toggle{float:left;font-family:var(--mono)}
+  body.rtl .metric .num,body.rtl .impact-item .val{direction:ltr;unicode-bidi:embed}
+  body.rtl .record{border-left:1px solid var(--border);border-right:3px solid var(--teal)}
+  body.rtl .record.cert{border-right-color:var(--gold);border-left-color:var(--border)}
+  body.rtl .side:first-child{border-left:none;border-right:3px solid var(--coral)}
+  body.rtl .side:last-child{border-left:none;border-right:3px solid var(--gold)}
+  body.rtl .record-body ul,body.rtl .side ul{margin:10px 18px 0 0}
+  body.rtl .ar{direction:rtl;text-align:right}
+  body.rtl .track-item{grid-template-columns:150px 1fr}
+  body.rtl .cap-card h4{flex-direction:row}
+
   /* ---- contact strip ---- */
   .contact-strip{padding:22px 0}
   .contact-strip .wrap{display:flex;flex-wrap:wrap;gap:20px 36px}
@@ -41,6 +86,12 @@
   .citem .dot{width:10px;height:10px;border-radius:50%;background:var(--coral);flex-shrink:0}
   .citem a{color:var(--text-muted);text-decoration:none;border-bottom:1px solid var(--border)}
   .citem a:hover{color:var(--teal)}
+
+  /* ---- sectors ---- */
+  .sectors{border-top:1px solid var(--border);padding:16px 0}
+  .sectors .wrap{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline}
+  .sec-k{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);white-space:nowrap}
+  .sec-v{font-size:13.5px;color:var(--text-muted);line-height:1.6}
 
   /* ---- metrics ---- */
   .metrics{background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:0}
@@ -77,11 +128,14 @@
   .ar{font-family:var(--mono);font-size:11.5px;color:var(--text-muted);direction:rtl;text-align:right;margin-top:14px;padding-top:10px;border-top:1px dotted var(--border)}
 
   /* ---- capabilities ---- */
-  .caps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:var(--border)}
-  .cap-card{background:var(--card);padding:24px 20px}
+  .caps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1px;background:var(--border)}
+  .cap-card{background:var(--card);padding:26px 22px;display:flex;flex-direction:column}
+  .cap-card .fw{margin-top:auto}
   .cap-card h4{font-family:var(--body);font-weight:700;font-size:15px;color:var(--white);margin-bottom:8px;display:flex;align-items:center;gap:8px}
   .cap-card h4::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--teal);flex-shrink:0}
-  .cap-card p{font-size:13.5px;color:var(--text-muted);line-height:1.55}
+  .cap-card p{font-size:13.5px;color:var(--text-muted);line-height:1.6}
+  .cap-card .fw{display:flex;flex-wrap:wrap;gap:5px;margin-top:14px;padding-top:12px;border-top:1px dotted var(--border)}
+  .cap-card .fw b{font-family:var(--mono);font-weight:400;font-size:9.5px;letter-spacing:.05em;color:var(--text-muted);border:1px solid var(--border);padding:3px 7px;white-space:nowrap}
 
   /* ---- track ---- */
   .track-item{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid var(--border)}
@@ -90,6 +144,19 @@
   .track-title{font-weight:700;font-size:15px;color:var(--white);margin-bottom:3px}
   .track-org{font-family:var(--mono);font-size:12px;color:var(--teal);margin-bottom:7px}
   .track-desc{font-size:13.5px;color:var(--text-muted);max-width:68ch}
+
+  /* ---- both sides ---- */
+  .sides{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border)}
+  .side{background:var(--card);padding:24px 22px}
+  .side:last-child{border-left:3px solid var(--gold)}
+  .side:first-child{border-left:3px solid var(--coral)}
+  .side-head{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);padding-bottom:12px;margin-bottom:14px;border-bottom:1px solid var(--border)}
+  .side p{font-size:14px;color:var(--text);margin-bottom:12px;line-height:1.6}
+  .side ul{margin:0 0 0 18px;font-size:13.5px;color:var(--text-muted)}
+  .side li{margin-bottom:7px;line-height:1.5}
+  .side li strong{color:var(--white)}
+  .sides-note{font-size:14px;color:var(--text-muted);max-width:70ch;margin-top:18px;font-style:italic;line-height:1.65}
+  @media (max-width:720px){.sides{grid-template-columns:1fr}}
 
   /* ---- credentials ---- */
   .cred-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
@@ -133,20 +200,35 @@
 <!-- ======== HERO ======== -->
 <header class="hero">
   <div class="wrap">
-    <h1 class="hero-name">Fatimah Elteliny</h1>
-    <p class="hero-sub">Customer experience, operational excellence and management systems — <em>turning service quality from an opinion into a certified, audited, measurable system.</em></p>
-    <p class="hero-thesis">Most organisations measure customer experience with surveys and sentiment. I measure it with ISO 10002, ISO 10004, TÜV audit reports and a 90% reduction in complaints. My work runs the full arc — from the contact-centre floor where I started, through journey redesign and complaints architecture, to external certification and surveillance. I do not deliver recommendations. I deliver systems that hold, and I have the audit trail to prove it.</p>
+    <button id="langBtn" class="lang-toggle" onclick="toggleLang()" aria-label="Switch language">العربية</button>
+    <div class="hero-grid">
+      <div class="hero-photo"><img src="fatimah.jpg" alt="Fatimah Elteliny"></div>
+      <div class="hero-text">
+        <h1 class="hero-name" data-en="Fatimah Elteliny" data-ar="فاطمة التليني">Fatimah Elteliny</h1>
+        <p class="hero-sub" data-en='Governance, enterprise risk, quality management, customer experience and operational excellence — <em>turning how an organisation runs from an opinion into a certified, audited, measurable system.</em>' data-ar='الحوكمة وإدارة المخاطر المؤسسية وأنظمة الجودة وتجربة العميل والتميّز التشغيلي — <em>تحويل طريقة عمل المؤسسة من رأي إلى نظام معتمد ومُدقَّق وقابل للقياس.</em>'>Governance, enterprise risk, quality management, customer experience and operational excellence — <em>turning how an organisation runs from an opinion into a certified, audited, measurable system.</em></p>
+        <p class="hero-thesis" data-en="Eleven years for Saudi government entities, sovereign bodies, banks and regulated firms. Governance models rebuilt from zero. Risk registers across 34 departments. 75+ process maps. Journeys, complaints architecture and voice-of-customer systems taken through TÜV audit to ISO certification on the first cycle. My complaints work began at the other end of the pipe — as the last line before the Ombudsman at Vodafone UK, trained by the Ombudsman's own trainers in resolving a case before it left the company's hands. Years later I designed a complaints management system and certified it to ISO 10002, the international standard for that same discipline. I do not deliver recommendations. I deliver systems that hold, and I have the audit trail to prove it." data-ar="أحد عشر عامًا من العمل مع الجهات الحكومية والسيادية والبنوك والمنشآت الخاضعة للتنظيم في المملكة. بناء نماذج حوكمة من الصفر. سجلات مخاطر مؤسسية تغطي ٣٤ إدارة. أكثر من ٧٥ خريطة إجراءات. تصميم رحلات العملاء ومعمارية الشكاوى وأنظمة صوت العميل، واجتيازها التدقيق الخارجي مع TÜV والحصول على شهادات الأيزو من الدورة الأولى. بدأ عملي في إدارة الشكاوى من الطرف الآخر — خط الدفاع الأخير قبل هيئة المظالم في فودافون المملكة المتحدة، وتلقّيت تدريبي على يد مدرّبي الهيئة نفسها في تسوية الحالة قبل خروجها من يد المؤسسة. وبعد سنوات صمّمت نظام إدارة شكاوى واعتمدته وفق ISO 10002، وهو المعيار الدولي للتخصص ذاته. أنا لا أُسلّم توصيات. أُسلّم أنظمة تصمد، ولديّ أثر التدقيق الذي يُثبت ذلك.">Eleven years for Saudi government entities, sovereign bodies, banks and regulated firms. Governance models rebuilt from zero. Risk registers across 34 departments. 75+ process maps. Journeys, complaints architecture and voice-of-customer systems taken through TÜV audit to ISO certification on the first cycle. My complaints work began at the other end of the pipe — as the last line before the Ombudsman at Vodafone UK, trained by the Ombudsman's own trainers in resolving a case before it left the company's hands. Years later I designed a complaints management system and certified it to ISO 10002, the international standard for that same discipline. I do not deliver recommendations. I deliver systems that hold, and I have the audit trail to prove it.</p>
+      </div>
+    </div>
   </div>
 </header>
 
 <!-- ======== CONTACT STRIP ======== -->
 <div class="contact-strip">
   <div class="wrap">
-    <div class="citem"><span class="dot"></span>Egyptian based in Riyadh, Saudi Arabia</div>
+    <div class="citem"><span class="dot"></span><span data-en="Egyptian based in Riyadh, Saudi Arabia · &lt;strong style=&quot;color:var(--teal);font-weight:500&quot;&gt;Transferable Iqama&lt;/strong&gt;" data-ar="مصرية مقيمة في الرياض، المملكة العربية السعودية · &lt;strong style=&quot;color:var(--teal);font-weight:500&quot;&gt;إقامة قابلة للنقل&lt;/strong&gt;">Egyptian based in Riyadh, Saudi Arabia · <strong style="color:var(--teal);font-weight:500">Transferable Iqama</strong></span></div>
     <div class="citem"><span class="dot"></span><a href="tel:+966538147894">+966 53 814 7894</a></div>
     <div class="citem"><span class="dot"></span><a href="mailto:fatimah.elteliny@gmail.com">fatimah.elteliny@gmail.com</a></div>
     <div class="citem"><span class="dot"></span><a href="https://www.linkedin.com/in/fatimah-elteliny/">LinkedIn</a></div>
-    <div class="citem"><span class="dot"></span>Arabic (native) · English (full professional)</div>
+    <div class="citem"><span class="dot"></span><span data-en="Arabic (native) · English (full professional)" data-ar="العربية (لغة أم) · الإنجليزية (إتقان مهني تام)">Arabic (native) · English (full professional)</span></div>
+    <div class="citem"><span class="dot"></span><a href="Fatimah_Elteliny_CV.pdf" data-en="Download CV (PDF)" data-ar="تحميل السيرة الذاتية (PDF)">Download CV (PDF)</a></div>
+  </div>
+</div>
+
+<!-- ======== SECTORS ======== -->
+<div class="sectors">
+  <div class="wrap">
+    <span class="sec-k" data-en="Sectors delivered" data-ar="القطاعات">Sectors delivered</span>
+    <span class="sec-v" data-en="Government · Sovereign / Royal Court · Banking &amp; financial services · Telecommunications · Industrial &amp; mining · FMCG · Real estate arbitration · Media &amp; broadcasting · Public procurement" data-ar="القطاع الحكومي · السيادي / الديوان الملكي · البنوك والخدمات المالية · الاتصالات · الصناعة والتعدين · السلع الاستهلاكية · التحكيم العقاري · الإعلام والبث · المشتريات الحكومية">Government · Sovereign / Royal Court · Banking &amp; financial services · Telecommunications · Industrial &amp; mining · FMCG · Real estate arbitration · Media &amp; broadcasting · Public procurement</span>
   </div>
 </div>
 
@@ -154,25 +236,97 @@
 <div class="metrics">
   <div class="wrap" style="padding:0">
     <div class="metrics-grid">
-      <div class="metric"><div class="num">90%</div><div class="cap">Reduction in Complaints<br>Certified via ISO 10002</div></div>
-      <div class="metric"><div class="num">2</div><div class="cap">ISO Certifications Secured<br>10002 &amp; 10004 · TÜV Audited</div></div>
-      <div class="metric"><div class="num">6</div><div class="cap">Years in Customer Operations<br>Contact centre to Lead Consultant</div></div>
-      <div class="metric"><div class="num">75+</div><div class="cap">Process Maps Authored<br>National procedural manual</div></div>
+      <div class="metric"><div class="num">90%</div><div class="cap" data-en="Reduction in Complaints<br>Certified via ISO 10002" data-ar="انخفاض في الشكاوى<br>معتمد وفق ISO 10002">Reduction in Complaints<br>Certified via ISO 10002</div></div>
+      <div class="metric"><div class="num">2</div><div class="cap" data-en="ISO Certifications Secured<br>10002 &amp; 10004 · TÜV Audited" data-ar="شهادتا أيزو<br>10002 و 10004 · تدقيق TÜV">ISO Certifications Secured<br>10002 &amp; 10004 · TÜV Audited</div></div>
+      <div class="metric"><div class="num">34</div><div class="cap" data-en="Departments Risk-Assessed<br>Registers &amp; 3-year audit plans" data-ar="إدارة خضعت لتقييم المخاطر<br>سجلات وخطط مراجعة لثلاث سنوات">Departments Risk-Assessed<br>Registers &amp; 3-year audit plans</div></div>
+      <div class="metric"><div class="num">75+</div><div class="cap" data-en="Process Maps Authored<br>National procedural manual" data-ar="خريطة إجراءات<br>دليل إجرائي وطني">Process Maps Authored<br>National procedural manual</div></div>
     </div>
   </div>
 </div>
 
+<!-- ======== CAPABILITIES ======== -->
+<section style="border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding-top:44px;padding-bottom:44px">
+  <div class="wrap">
+    <div class="sec-label">01</div>
+    <div class="sec-title" data-en="What I Do" data-ar="مجالات الخبرة">What I Do</div>
+    <div class="sec-meta" data-en="Government · Sovereign · Banking · Regulated · Private sector" data-ar="حكومي · سيادي · مصرفي · خاضع للتنظيم · قطاع خاص">Government · Sovereign · Banking · Regulated · Private sector</div>
+    <div class="caps-grid">
+
+      <div class="cap-card">
+        <h4 data-en="Customer Experience &amp; Voice of Customer" data-ar="تجربة العميل وصوت العميل">Customer Experience &amp; Voice of Customer</h4>
+        <p>Journey design, complaints architecture, satisfaction and survey instruments, mystery shopping programmes, closed-loop feedback and root-cause analysis on what customers actually tell you.</p>
+        <div class="fw"><b>ICXS</b><b>ISO 10002</b><b>ISO 10004</b><b>COPC</b><b>Journey mapping</b><b>NPS · CSAT · CES</b><b>Medallia</b></div>
+      </div>
+
+      <div class="cap-card">
+        <h4 data-en="Governance &amp; Decision Rights" data-ar="الحوكمة وصلاحيات اتخاذ القرار">Governance &amp; Decision Rights</h4>
+        <p>Governance charters, board and committee bylaws, delegation of authority, policy suites, RACI, codes of conduct, and the compliance universe underneath them.</p>
+        <div class="fw"><b>ISO 37000</b><b>ISO 37301</b><b>COSO ERM</b><b>OECD Principles</b><b>RACI · DoA</b><b>Three Lines</b></div>
+      </div>
+
+      <div class="cap-card">
+        <h4 data-en="Enterprise Risk &amp; Internal Audit" data-ar="إدارة المخاطر المؤسسية والمراجعة الداخلية">Enterprise Risk &amp; Internal Audit</h4>
+        <p>Risk workshops, taxonomy and appetite, full enterprise risk registers, control assessment, and the risk-based multi-year audit plans that follow from them.</p>
+        <div class="fw"><b>ISO 31000</b><b>COSO ERM</b><b>IIA IPPF</b><b>Risk-based audit planning</b><b>Control testing</b></div>
+      </div>
+
+      <div class="cap-card">
+        <h4 data-en="Compliance &amp; Financial Crime" data-ar="الالتزام ومكافحة الجرائم المالية">Compliance &amp; Financial Crime</h4>
+        <p>AML, KYC and sanctions screening; regulatory initiative delivery across a branch network; fraud and AML casework with regulators, insurers and correspondent banks.</p>
+        <div class="fw"><b>FATF</b><b>CAMS</b><b>ISO 37301</b><b>KYC · CDD · EDD</b><b>Sanctions screening</b><b>Central Bank reporting</b></div>
+      </div>
+
+      <div class="cap-card">
+        <h4 data-en="Quality Management &amp; Certification" data-ar="إدارة الجودة والاعتماد">Quality Management &amp; Certification</h4>
+        <p>Gap analysis, management system design, internal audit, external certification, and the surveillance and corrective-action cycles that keep it alive after year one.</p>
+        <div class="fw"><b>ISO 9001</b><b>ISO 10002</b><b>ISO 10004</b><b>ISO 22301</b><b>COPC</b><b>PDCA</b></div>
+      </div>
+
+      <div class="cap-card">
+        <h4 data-en="Operational Excellence &amp; Process" data-ar="التميّز التشغيلي وهندسة الإجراءات">Operational Excellence &amp; Process</h4>
+        <p>End-to-end process mapping and redesign, procedural manuals at scale, target operating models, and the small template fixes that remove rework at source.</p>
+        <div class="fw"><b>Lean Six Sigma · DMAIC</b><b>BPMN 2.0</b><b>SIPOC</b><b>Value stream mapping</b><b>RCA · 5 Whys · Ishikawa</b></div>
+      </div>
+
+      <div class="cap-card">
+        <h4 data-en="Change Management &amp; Migration" data-ar="إدارة التغيير وترحيل الأنظمة">Change Management &amp; Migration</h4>
+        <p>Championing system migrations end to end — readiness, knowledge cascade, process and template redesign, defect capture, and adoption through the transition.</p>
+        <div class="fw"><b>Stakeholder mapping</b><b>Readiness &amp; adoption</b><b>Knowledge cascade</b><b>Hypercare</b></div>
+      </div>
+
+      <div class="cap-card">
+        <h4 data-en="Performance Management &amp; Reporting" data-ar="إدارة الأداء والتقارير">Performance Management &amp; Reporting</h4>
+        <p>KPI frameworks and cascades, executive dashboards, variance analysis, and board-level reporting pitched at the level of the person reading it.</p>
+        <div class="fw"><b>Balanced Scorecard</b><b>KPI design</b><b>Benchmarking</b><b>Power BI</b></div>
+      </div>
+
+      <div class="cap-card">
+        <h4 data-en="Service Operations &amp; Team Management" data-ar="عمليات الخدمة وإدارة الفرق">Service Operations &amp; Team Management</h4>
+        <p>Full management of an outsourced contact-centre team — performance, real-time management, quality assurance, knowledge base, coaching and corrective action.</p>
+        <div class="fw"><b>COPC</b><b>RTM · WFM</b><b>QA frameworks</b><b>SLA · AHT · FCR</b><b>NPS</b></div>
+      </div>
+
+      <div class="cap-card">
+        <h4 data-en="Feasibility, Business Case &amp; Bid" data-ar="دراسات الجدوى وحالة الأعمال والعروض الفنية">Feasibility, Business Case &amp; Bid</h4>
+        <p>Market entry and investment feasibility studies — market sizing, cost modelling, financials and risk. Technical proposals and business cases for Saudi public tenders, drafted in Arabic and English to the terminology of the source.</p>
+        <div class="fw"><b>Market entry feasibility</b><b>Cost-benefit analysis</b><b>Financial modelling</b><b>Etimad</b><b>RFP decomposition</b><b>Bilingual drafting</b></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ======== ENGAGEMENTS ======== -->
 <section>
   <div class="wrap">
-    <div class="sec-label">01</div>
-    <div class="sec-title">Selected Engagements</div>
-    <div class="sec-meta">Saudi Arabia · Government · Sovereign · Private Sector</div>
+    <div class="sec-label">02</div>
+    <div class="sec-title" data-en="Selected Engagements" data-ar="مشاريع مختارة">Selected Engagements</div>
+    <div class="sec-meta" data-en="Saudi Arabia · Government · Sovereign · Private Sector" data-ar="المملكة العربية السعودية · حكومي · سيادي · قطاع خاص">Saudi Arabia · Government · Sovereign · Private Sector</div>
 
     <!-- NCGR — CX LEAD -->
     <article class="record cert">
       <div class="record-head">
-        <h3>Total quality management and performance monitoring for the national beneficiary support system</h3>
+        <h3 data-en="Total quality management and performance monitoring for the national beneficiary support system" data-ar="إدارة الجودة الشاملة ومراقبة الأداء لمنظومة دعم وتمكين المستفيدين">Total quality management and performance monitoring for the national beneficiary support system</h3>
         <div class="record-tags">
           <span class="tag">NCGR — E'timad Platform</span>
           <span class="tag role">Lead Consultant</span>
@@ -182,7 +336,8 @@
       <div class="record-body">
         <p>Led a two-year customer experience and quality transformation, taking the beneficiary support and enablement function of Saudi Arabia's national procurement platform from unassessed to internationally certified — and then keeping it certified through surveillance.</p>
         <ul>
-          <li><strong>Customer experience design.</strong> Customer journeys, complaint-handling charters, customer satisfaction survey instruments, root-cause analysis processes, and CRM improvements — built from the ground up.</li>
+          <li><strong>Customer experience design.</strong> Customer journeys, complaint-handling charters, root-cause analysis processes, and CRM improvements — built from the ground up.</li>
+          <li><strong>Voice of customer &amp; measurement.</strong> Satisfaction survey instruments designed across customer segments and personas; planned, reviewed and improved the mystery shopping programme as part of the CX strategy.</li>
           <li><strong>Quality management system.</strong> Current-state assessment and gap analysis against ISO 9001, ISO 10002 (complaints management), ISO 10004 (customer satisfaction) and the COPC customer operations standard.</li>
           <li><strong>Policy and procedure architecture.</strong> Full policy and procedure suite, risk and compliance registers, KPI framework and reporting architecture.</li>
           <li><strong>Certification.</strong> Tested the designed system, ran the internal audit, then took it through external audit with TÜV — certifying to ISO 10002 and ISO 10004 on the first cycle.</li>
@@ -201,7 +356,7 @@
     <!-- DSC -->
     <article class="record">
       <div class="record-head">
-        <h3>Rebuilding the internal governance model of a sovereign decision-support institution</h3>
+        <h3 data-en="Rebuilding the internal governance model of a sovereign decision-support institution" data-ar="إعادة بناء نموذج الحوكمة الداخلي لجهة سيادية لدعم القرار">Rebuilding the internal governance model of a sovereign decision-support institution</h3>
         <div class="record-tags">
           <span class="tag">Decision Support Centre — Royal Court affiliate</span>
           <span class="tag">Sovereign</span>
@@ -224,7 +379,7 @@
     <!-- MoMRAH -->
     <article class="record">
       <div class="record-head">
-        <h3>Governance and operating model for the ministry's emergency &amp; crisis management centre</h3>
+        <h3 data-en="Governance and operating model for the ministry's emergency &amp; crisis management centre" data-ar="الحوكمة والنموذج التشغيلي لمركز إدارة الطوارئ والأزمات بالوزارة">Governance and operating model for the ministry's emergency &amp; crisis management centre</h3>
         <div class="record-tags">
           <span class="tag">MoMRAH — Ministry &amp; Municipalities</span>
           <span class="tag">Government</span>
@@ -244,7 +399,7 @@
     <!-- Aldrees -->
     <article class="record">
       <div class="record-head">
-        <h3>Enterprise risk assessment and three-year internal audit plan</h3>
+        <h3 data-en="Enterprise risk assessment and three-year internal audit plan" data-ar="تقييم المخاطر المؤسسية وخطة المراجعة الداخلية لثلاث سنوات">Enterprise risk assessment and three-year internal audit plan</h3>
         <div class="record-tags">
           <span class="tag">Aldrees Industry &amp; Mining</span>
           <span class="tag">Private / Industrial</span>
@@ -260,7 +415,7 @@
     <!-- Naqi -->
     <article class="record">
       <div class="record-head">
-        <h3>Internal audit advisory: risk registers and three-year audit plan</h3>
+        <h3 data-en="Internal audit advisory: risk registers and three-year audit plan" data-ar="استشارات المراجعة الداخلية: سجلات المخاطر وخطة ثلاث سنوات">Internal audit advisory: risk registers and three-year audit plan</h3>
         <div class="record-tags">
           <span class="tag">Naqi Water</span>
           <span class="tag">Private / FMCG</span>
@@ -276,7 +431,7 @@
     <!-- SREAC -->
     <article class="record">
       <div class="record-head">
-        <h3>Procedural manual: 75+ process maps for a national arbitration body</h3>
+        <h3 data-en="Procedural manual: 75+ process maps for a national arbitration body" data-ar="الدليل الإجرائي: أكثر من ٧٥ خريطة إجراءات لجهة تحكيم وطنية">Procedural manual: 75+ process maps for a national arbitration body</h3>
         <div class="record-tags">
           <span class="tag">Saudi Real Estate Arbitration Centre</span>
           <span class="tag">Independent</span>
@@ -288,55 +443,94 @@
         <p class="ar">الأدلة الإجرائية</p>
       </div>
     </article>
+
+    <!-- FEASIBILITY -->
+    <article class="record">
+      <div class="record-head">
+        <h3 data-en="Market entry and investment feasibility studies" data-ar="دراسات جدوى دخول السوق والاستثمار">Market entry and investment feasibility studies</h3>
+        <div class="record-tags">
+          <span class="tag">Data centre · Aluminium · Glass</span>
+          <span class="tag">Private / Industrial</span>
+          <span class="tag outcome">3 complete studies</span>
+        </div>
+      </div>
+      <div class="record-body">
+        <p>Three complete feasibility studies for investors and executives evaluating entry into the Saudi market — a <strong>data centre</strong>, an <strong>aluminium manufacturing plant</strong>, and a <strong>glass factory</strong>.</p>
+        <ul>
+          <li><strong>Market.</strong> Demand sizing, competitive landscape, regulatory environment, and the Vision 2030 and localisation drivers shaping each sector.</li>
+          <li><strong>Economics.</strong> Capital and operating cost modelling, input and energy costs, financial projections and return analysis.</li>
+          <li><strong>Risk.</strong> Entry risks, supply and offtake exposures, and the conditions under which the case does not hold.</li>
+          <li><strong>Deliverables.</strong> Financial workbooks, analytical documents and board-ready reporting in Arabic and English.</li>
+        </ul>
+        <p class="ar">دراسات جدوى لدخول السوق — مركز بيانات · مصنع ألمنيوم · مصنع زجاج</p>
+      </div>
+    </article>
+
+    <!-- BIDS & PROPOSALS -->
+    <article class="record">
+      <div class="record-head">
+        <h3 data-en="Technical proposals and business cases for Saudi public tenders" data-ar="العروض الفنية ودراسات الجدوى للمنافسات الحكومية">Technical proposals and business cases for Saudi public tenders</h3>
+        <div class="record-tags">
+          <span class="tag">Etimad · Government tenders</span>
+          <span class="tag">Bid &amp; proposal</span>
+          <span class="tag">Arabic &amp; English</span>
+        </div>
+      </div>
+      <div class="record-body">
+        <p>Own client-facing bid work end to end — technical proposals, feasibility studies and business cases for public tenders on the Etimad platform. Recent engagements include a data warehouse proposal for the Saudi Broadcasting Authority, a topographic survey tender for a medical services entity, and a financial transparency proposal on an Etimad procurement project.</p>
+        <p>Precision work, in Arabic, held strictly to the terminology of the source documents — where a single unsupported addition can disqualify a bid.</p>
+        <p class="ar">إعداد العروض الفنية ودراسات الجدوى للمنافسات الحكومية</p>
+      </div>
+    </article>
   </div>
 </section>
 
-<!-- ======== CAPABILITIES ======== -->
-<section style="border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding-top:40px;padding-bottom:40px">
+<!-- ======== BOTH SIDES ======== -->
+<section>
   <div class="wrap">
-    <div class="sec-label">02</div>
-    <div class="sec-title">Core Capabilities</div>
-    <div class="sec-meta" style="margin-bottom:20px"></div>
-    <div class="caps-grid">
-      <div class="cap-card">
-        <h4>Customer Experience Transformation</h4>
-        <p>Customer journey design, complaint-handling charters, satisfaction measurement, VoC survey instruments, root-cause analysis, CRM improvement — certified to ISO 10002 and ISO 10004 via external audit, not asserted in a slide.</p>
+    <div class="sec-label">03</div>
+    <div class="sec-title" data-en="Both Sides of the System" data-ar="طرفا المنظومة">Both Sides of the System</div>
+    <div class="sec-meta" data-en="Measured 2015–2021 · Measuring 2021–Present" data-ar="خاضعة للقياس ٢٠١٥–٢٠٢١ · أبني القياس ٢٠٢١–حتى الآن">Measured 2015–2021 · Measuring 2021–Present</div>
+
+    <div class="sides">
+      <div class="side">
+        <div class="side-head" data-en="Inside — being measured" data-ar="من الداخل — خاضعة للقياس">Inside — being measured</div>
+        <p>Six years carrying the targets. Service level, average handling time, first-contact resolution, CSAT, NPS. Escalated complaints landing on my desk. Mystery shoppers walking into my branch network. Internal audit testing my controls.</p>
+        <ul>
+          <li>The <strong>last line before the Ombudsman</strong> at Vodafone UK — trained by Ombudsman trainers in resolving cases before they left the company</li>
+          <li>Top achiever on <strong>NPS</strong> and <strong>Next Best Offer</strong> cross-sell — upgrades, add-ons, hardware</li>
+          <li>Total manager of an outsourced contact-centre team; real-time management, QA, knowledge base, coaching</li>
+          <li>Championed <strong>three core system migrations</strong> — loans, debit cards, CRM</li>
+          <li>Tested controls and followed remediation to closure as an internal audit officer</li>
+        </ul>
       </div>
-      <div class="cap-card">
-        <h4>Operational Excellence &amp; Process Architecture</h4>
-        <p>End-to-end process mapping, BPMN workflows and procedural manuals at scale. 75+ mapped processes. Workflow redesign grounded in six years of running the operations myself.</p>
-      </div>
-      <div class="cap-card">
-        <h4>Quality Management &amp; Certification</h4>
-        <p>ISO 9001, 10002, 10004, 22301 and COPC. Gap analysis through design, testing, internal audit, external audit and certification — then surveillance and corrective action.</p>
-      </div>
-      <div class="cap-card">
-        <h4>Governance, Risk &amp; Compliance</h4>
-        <p>Governance charters, board and committee bylaws, delegation-of-authority matrices, RACI frameworks, compliance universes. ISO 37301 · ISO 37000 · COSO · OECD. Enterprise risk registers across 34 departments.</p>
-      </div>
-      <div class="cap-card">
-        <h4>Performance Management</h4>
-        <p>KPI frameworks, Balanced Scorecard, executive dashboards and operational reporting. Power BI. Measures designed to change behaviour, not merely describe it.</p>
-      </div>
-      <div class="cap-card">
-        <h4>Reporting, PMO &amp; Digital Enablement</h4>
-        <p>Executive reporting, performance dashboard design, transformation tracking, PMO coordination, and reporting automation for operational visibility.</p>
+      <div class="side">
+        <div class="side-head" data-en="Outside — building the system" data-ar="من الخارج — أبني المنظومة">Outside — building the system</div>
+        <p>Five years designing what does the measuring. Governance models, risk registers, quality management systems, KPI architectures, mystery shopping programmes, satisfaction instruments — and the audits that prove they work.</p>
+        <ul>
+          <li>Built the complaints architecture and <strong>certified it to ISO 10002</strong> — the standard for the discipline I was trained in at the Ombudsman end</li>
+          <li>Designed the mystery shopping programme and VoC measurement for a national platform</li>
+          <li>Audited the branch network for compliance adherence; raised SOP defects and drove them to fix</li>
+          <li>Built enterprise risk registers and risk-based audit plans across <strong>34 departments</strong></li>
+          <li>Rebuilt a sovereign entity's governance model from zero</li>
+        </ul>
       </div>
     </div>
+    <p class="sides-note">Most people who design a complaints system have never had to defend one to an ombudsman. Most people who design a measurement system have never been held to one. The systems I build assume someone has to live inside them — because for six years, I did.</p>
   </div>
 </section>
 
 <!-- ======== CAREER HISTORY ======== -->
-<section>
+<section style="border-top:1px solid var(--border)">
   <div class="wrap">
-    <div class="sec-label">03</div>
-    <div class="sec-title">Career History</div>
-    <div class="sec-meta">2015 — Present</div>
+    <div class="sec-label">04</div>
+    <div class="sec-title" data-en="Career History" data-ar="المسيرة المهنية">Career History</div>
+    <div class="sec-meta" data-en="2015 — Present" data-ar="٢٠١٥ — حتى الآن">2015 — Present</div>
 
     <div class="track-item">
       <div class="track-when">Mar 2024 — Present</div>
       <div>
-        <div class="track-title">Management Consultant</div>
+        <div class="track-title" data-en="Management Consultant" data-ar="مستشارة إدارية">Management Consultant</div>
         <div class="track-org">ANMAT · Riyadh</div>
         <div class="track-desc">Operational excellence, governance transformation, quality management, customer experience and performance improvement for public-sector, semi-government and regulated organisations. Lead current-state assessments; design TQM systems, customer journeys and complaint-handling charters; conduct multi-departmental audits; prepare VP/President-level reporting. Support RFP development and feasibility studies.</div>
       </div>
@@ -345,7 +539,7 @@
     <div class="track-item">
       <div class="track-when">Mar 2023 — Mar 2024</div>
       <div>
-        <div class="track-title">GRC &amp; Operational Transformation Consultant</div>
+        <div class="track-title" data-en="GRC &amp; Operational Transformation Consultant" data-ar="مستشارة الحوكمة والمخاطر والالتزام والتحول التشغيلي">GRC &amp; Operational Transformation Consultant</div>
         <div class="track-org">Bunyan Middle East · Riyadh</div>
         <div class="track-desc">Project-based governance, compliance, ERM, internal audit and operational transformation across government, Royal Court-affiliated, manufacturing and regulated clients. Built governance operating models, compliance universes and regulatory obligation frameworks; ran enterprise risk assessments and internal audit planning.</div>
       </div>
@@ -354,25 +548,25 @@
     <div class="track-item">
       <div class="track-when">Jun 2021 — Mar 2023</div>
       <div>
-        <div class="track-title">Compliance Officer</div>
+        <div class="track-title" data-en="Compliance Officer" data-ar="مسؤولة الالتزام">Compliance Officer</div>
         <div class="track-org">Emirates NBD · Cairo</div>
-        <div class="track-desc">AML, KYC, CDD and sanctions screening; investigation and escalation of suspicious transactions; Central Bank compliance monitoring; compliance reporting and audit trails.</div>
+        <div class="track-desc">AML, KYC, CDD and sanctions screening; investigation and escalation of suspicious transactions; Central Bank compliance monitoring, reporting and audit trails. Delivered <strong>Central Bank of Egypt foreign-currency control initiatives</strong> across the branch network. Handled fraud and AML cases in alignment with branches, operational risk, insurance partners, the Central Bank, and correspondent banks inside and outside Egypt. Conducted <strong>branch compliance audits</strong> as part of an initiative to raise adherence across the network. Raised defects in existing SOPs and drove them to remediation with the relevant teams through the formal approval sequence.</div>
       </div>
     </div>
 
     <div class="track-item">
       <div class="track-when">Apr 2019 — May 2021</div>
       <div>
-        <div class="track-title">Customer Service Team Lead</div>
+        <div class="track-title" data-en="Customer Service Team Lead" data-ar="قائدة فريق خدمة العملاء">Customer Service Team Lead</div>
         <div class="track-org">Emirates NBD · Cairo</div>
-        <div class="track-desc">Led a contact-centre team against service level, AHT, first-contact-resolution, quality and CSAT targets. Coached staff through performance feedback and corrective action plans. Owned escalated complaints and complex cases; built operational reporting; drove process improvement from recurring pain points and root causes.</div>
+        <div class="track-desc">Total manager of an outsourced contact-centre team — performance and administration — against service level, AHT, first-contact-resolution, quality, CSAT and NPS targets. Shift leadership and real-time management. Live escalation handling and stuck-ticket resolution. Quality assurance through call listening and review of chat and email quotas. Owned the knowledge base and cascaded new knowledge to the floor. Designed a unified CRM ticket template so downstream teams received every field needed to close a case first time. <strong>Championed three core system migrations</strong> — loans, debit cards and CRM.</div>
       </div>
     </div>
 
     <div class="track-item">
       <div class="track-when">Sep 2018 — Apr 2019</div>
       <div>
-        <div class="track-title">Internal Audit Officer</div>
+        <div class="track-title" data-en="Internal Audit Officer" data-ar="مسؤولة المراجعة الداخلية">Internal Audit Officer</div>
         <div class="track-org">Emirates NBD · Cairo</div>
         <div class="track-desc">Reviewed policies, procedures and transactions to assess control effectiveness and operational risk; identified control gaps; prepared audit observations with root-cause analysis; followed remediation to closure.</div>
       </div>
@@ -381,7 +575,7 @@
     <div class="track-item">
       <div class="track-when">Aug 2017 — Aug 2018</div>
       <div>
-        <div class="track-title">Customer Service Officer</div>
+        <div class="track-title" data-en="Customer Service Officer" data-ar="موظفة خدمة عملاء">Customer Service Officer</div>
         <div class="track-org">Emirates NBD · Cairo</div>
         <div class="track-desc">Front-line customer support across banking products and services; complaint handling, CRM documentation and KYC-related activities.</div>
       </div>
@@ -390,9 +584,9 @@
     <div class="track-item">
       <div class="track-when">Mar 2015 — Jul 2017</div>
       <div>
-        <div class="track-title">Escalation Manager · Billing Advisor</div>
+        <div class="track-title" data-en="Escalation Manager · Billing Advisor" data-ar="مديرة التصعيدات · مستشارة الفوترة">Escalation Manager · Billing Advisor</div>
         <div class="track-org">Vodafone UK · Cairo</div>
-        <div class="track-desc">Owned high-priority escalated complaints end-to-end for Vodafone UK. Monitored escalation trends and service failures to identify process gaps; ensured compliance with complaint-handling procedures and data protection standards.</div>
+        <div class="track-desc">The last line before the Ombudsman. Owned high-priority escalated complaints end-to-end for Vodafone UK, working in the Medallia voice-of-customer platform. Trained by Ombudsman trainers in resolving cases before they left the company's hands — protecting the customer relationship and the business at the same time. Monitored escalation trends and service failures to identify the process gaps underneath; held to complaint-handling procedure and data protection standards. As Billing Advisor, repeatedly recognised as a top achiever on <strong>NPS</strong> and <strong>Next Best Offer</strong> cross-sell — upgrades, add-ons and hardware.</div>
       </div>
     </div>
   </div>
@@ -401,28 +595,29 @@
 <!-- ======== CREDENTIALS ======== -->
 <section style="border-top:1px solid var(--border);padding-top:40px">
   <div class="wrap">
-    <div class="sec-label">04</div>
-    <div class="sec-title">Credentials</div>
+    <div class="sec-label">05</div>
+    <div class="sec-title" data-en="Credentials" data-ar="المؤهلات والشهادات">Credentials</div>
     <div class="sec-meta"></div>
     <div class="cred-grid">
       <div class="cred-block">
-        <h4>Certifications</h4>
+        <h4 data-en="Certifications" data-ar="الشهادات المهنية">Certifications</h4>
         <ul class="cred-list">
           <li><span>Lean Six Sigma <strong>Black Belt</strong> — IMC, CPD-accredited (London)<br><span style="font-family:var(--mono);font-size:10px;color:var(--text-muted)">Cert. C-2025-49212 · 72 CPD hours</span></span><span class="yr">2025</span></li>
           <li><span>Lean Six Sigma <strong>Green Belt</strong> — IMC, CPD-accredited (London)<br><span style="font-family:var(--mono);font-size:10px;color:var(--text-muted)">Cert. C-2025-49211 · 72 CPD hours</span></span><span class="yr">2024</span></li>
           <li><span>Certified Anti-Money Laundering Specialist (CAMS) — Central Bank of Egypt</span><span class="yr">2022</span></li>
         </ul>
-        <h4 style="margin-top:24px">Education</h4>
+        <h4 style="margin-top:24px" data-en="Education" data-ar="المؤهل الدراسي">Education</h4>
         <ul class="cred-list">
           <li><span>Cairo University — English Language &amp; Literature</span><span class="yr">2016</span></li>
         </ul>
       </div>
       <div class="cred-block">
-        <h4>Professional Training</h4>
+        <h4 data-en="Professional Training" data-ar="التدريب المهني">Professional Training</h4>
         <ul class="cred-list">
           <li><span>PMP Exam Preparation — 35 contact hours (IMC)</span><span class="yr">2026</span></li>
           <li><span>GRCP — Governance, Risk &amp; Compliance Professional</span><span class="yr">2026</span></li>
           <li><span>Operations Management Professional — Jack Welch MI</span><span class="yr">2025</span></li>
+          <li><span>ICXS — International Customer Experience Standard</span><span class="yr">2025</span></li>
           <li><span>Customer Experience &amp; Journey Mapping</span><span class="yr">2025</span></li>
           <li><span>ISO 37301 Compliance Management Systems</span><span class="yr">2024</span></li>
           <li><span>ISO 37000 Governance of Organizations</span><span class="yr">2024</span></li>
@@ -440,9 +635,9 @@
 <!-- ======== FOOTER ======== -->
 <footer class="footer">
   <div class="wrap">
-    <div class="sec-label">Available for</div>
-    <h2>Customer experience, operations &amp; transformation leadership</h2>
-    <p>Riyadh-based. Sovereign, government, regulated and private sector. Arabic and English at client, audit and board level.</p>
+    <div class="sec-label" data-en="Available for" data-ar="متاحة لـ">Available for</div>
+    <h2 data-en="Governance, risk, operations &amp; customer experience leadership" data-ar="قيادة الحوكمة والمخاطر والعمليات وتجربة العميل">Governance, risk, operations &amp; customer experience leadership</h2>
+    <p data-en="Riyadh-based. Sovereign, government, banking, regulated and private sector. Arabic and English at client, audit and board level. Consulting or in-house." data-ar="مقيمة في الرياض. القطاع السيادي والحكومي والمصرفي والخاضع للتنظيم والخاص. العربية والإنجليزية على مستوى العميل والتدقيق ومجلس الإدارة. استشاري أو داخل المنشأة.">Riyadh-based. Sovereign, government, banking, regulated and private sector. Arabic and English at client, audit and board level. Consulting or in-house.</p>
     <div class="footer-grid">
       <div><span class="k">Email</span><span class="v"><a href="mailto:fatimah.elteliny@gmail.com">fatimah.elteliny@gmail.com</a></span></div>
       <div><span class="k">Phone</span><span class="v">+966 53 814 7894</span></div>
@@ -453,5 +648,22 @@
   </div>
 </footer>
 
+
+<script>
+(function(){
+  var els = document.querySelectorAll('[data-en][data-ar]');
+  var btn = document.getElementById('langBtn');
+  var lang = 'en';
+  window.toggleLang = function(){
+    lang = (lang === 'en') ? 'ar' : 'en';
+    document.body.classList.toggle('rtl', lang === 'ar');
+    document.documentElement.lang = lang;
+    els.forEach(function(el){
+      el.innerHTML = el.getAttribute(lang === 'ar' ? 'data-ar' : 'data-en');
+    });
+    btn.textContent = (lang === 'ar') ? 'English' : 'العربية';
+  };
+})();
+</script>
 </body>
 </html>
