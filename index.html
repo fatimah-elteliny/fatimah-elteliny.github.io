@@ -10,6 +10,16 @@
 <meta property="og:type" content="profile">
 <meta property="og:url" content="https://fatimah-elteliny.github.io/">
 <meta name="twitter:card" content="summary_large_image">
+
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xm0d1qmdfk");
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -40,7 +50,6 @@
   .hero-sub em{color:var(--white);font-style:normal;border-bottom:1px solid var(--teal);padding-bottom:2px}
   .hero-thesis{font-size:15.5px;color:var(--text-muted);max-width:58ch;line-height:1.65;padding-top:20px;border-top:1px solid var(--border)}
 
-  /* ---- hero ---- */
   .hero-grid{display:grid;grid-template-columns:170px 1fr;gap:34px;align-items:start}
   .hero-photo img{width:170px;height:210px;object-fit:cover;object-position:center top;border:1px solid var(--border);border-bottom:3px solid var(--teal);display:block}
   .lang-toggle{
@@ -57,7 +66,6 @@
   /* ---- RTL ---- */
   body.rtl{direction:rtl;font-family:'IBM Plex Sans Arabic','Inter',system-ui,sans-serif}
   body.rtl .hero-name,body.rtl .sec-title,body.rtl .record-head h3,body.rtl .footer h2{font-family:'IBM Plex Sans Arabic',var(--display),serif;font-weight:600}
-  /* mono has no Arabic — swap it out wherever Arabic text lands */
   body.rtl .cap,body.rtl .sec-meta,body.rtl .tag,body.rtl .track-when,body.rtl .track-org,
   body.rtl .cred-list .yr,body.rtl .sec-v,body.rtl .lbl,body.rtl .stamp,body.rtl .nda,
   body.rtl .footer-grid .v,body.rtl .cap-card .fw b{
@@ -130,11 +138,10 @@
   /* ---- capabilities ---- */
   .caps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1px;background:var(--border)}
   .cap-card{background:var(--card);padding:26px 22px;display:flex;flex-direction:column}
-  .cap-card .fw{margin-top:auto}
   .cap-card h4{font-family:var(--body);font-weight:700;font-size:15px;color:var(--white);margin-bottom:8px;display:flex;align-items:center;gap:8px}
   .cap-card h4::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--teal);flex-shrink:0}
   .cap-card p{font-size:13.5px;color:var(--text-muted);line-height:1.6}
-  .cap-card .fw{display:flex;flex-wrap:wrap;gap:5px;margin-top:14px;padding-top:12px;border-top:1px dotted var(--border)}
+  .cap-card .fw{display:flex;flex-wrap:wrap;gap:5px;margin-top:auto;padding-top:12px;border-top:1px dotted var(--border)}
   .cap-card .fw b{font-family:var(--mono);font-weight:400;font-size:9.5px;letter-spacing:.05em;color:var(--text-muted);border:1px solid var(--border);padding:3px 7px;white-space:nowrap}
 
   /* ---- track ---- */
@@ -255,7 +262,7 @@
       <div class="cap-card">
         <h4 data-en="Customer Experience &amp; Voice of Customer" data-ar="تجربة العميل وصوت العميل">Customer Experience &amp; Voice of Customer</h4>
         <p>Journey design, complaints architecture, satisfaction and survey instruments, mystery shopping programmes, closed-loop feedback and root-cause analysis on what customers actually tell you.</p>
-        <div class="fw"><b>ICXS</b><b>ISO 10002</b><b>ISO 10004</b><b>COPC</b><b>Journey mapping</b><b>NPS · CSAT · CES</b><b>Medallia</b></div>
+        <div class="fw"><b>ICXS</b><b>ISO 10002</b><b>ISO 10004</b><b>COPC</b><b>Journey mapping</b><b>NPS · CSAT · CES</b><b>Medallia</b><b>MS Dynamics CRM</b></div>
       </div>
 
       <div class="cap-card">
@@ -290,8 +297,8 @@
 
       <div class="cap-card">
         <h4 data-en="Change Management &amp; Migration" data-ar="إدارة التغيير وترحيل الأنظمة">Change Management &amp; Migration</h4>
-        <p>Championing system migrations end to end — readiness, knowledge cascade, process and template redesign, defect capture, and adoption through the transition.</p>
-        <div class="fw"><b>Stakeholder mapping</b><b>Readiness &amp; adoption</b><b>Knowledge cascade</b><b>Hypercare</b></div>
+        <p>Championing system migrations end to end — readiness, knowledge cascade, process and template redesign, defect capture, and adoption through the transition. Three core banking platforms migrated: loans, cards and CRM.</p>
+        <div class="fw"><b>Stakeholder mapping</b><b>Readiness &amp; adoption</b><b>Knowledge cascade</b><b>Hypercare</b><b>Core system migration</b></div>
       </div>
 
       <div class="cap-card">
@@ -323,7 +330,6 @@
     <div class="sec-title" data-en="Selected Engagements" data-ar="مشاريع مختارة">Selected Engagements</div>
     <div class="sec-meta" data-en="Saudi Arabia · Government · Sovereign · Private Sector" data-ar="المملكة العربية السعودية · حكومي · سيادي · قطاع خاص">Saudi Arabia · Government · Sovereign · Private Sector</div>
 
-    <!-- NCGR — CX LEAD -->
     <article class="record cert">
       <div class="record-head">
         <h3 data-en="Total quality management and performance monitoring for the national beneficiary support system" data-ar="إدارة الجودة الشاملة ومراقبة الأداء لمنظومة دعم وتمكين المستفيدين">Total quality management and performance monitoring for the national beneficiary support system</h3>
@@ -336,7 +342,7 @@
       <div class="record-body">
         <p>Led a two-year customer experience and quality transformation, taking the beneficiary support and enablement function of Saudi Arabia's national procurement platform from unassessed to internationally certified — and then keeping it certified through surveillance.</p>
         <ul>
-          <li><strong>Customer experience design.</strong> Customer journeys, complaint-handling charters, root-cause analysis processes, and CRM improvements — built from the ground up.</li>
+          <li><strong>Customer experience design.</strong> Customer journeys, complaint-handling charters, root-cause analysis processes, and Microsoft Dynamics CRM improvements — built from the ground up.</li>
           <li><strong>Voice of customer &amp; measurement.</strong> Satisfaction survey instruments designed across customer segments and personas; planned, reviewed and improved the mystery shopping programme as part of the CX strategy.</li>
           <li><strong>Quality management system.</strong> Current-state assessment and gap analysis against ISO 9001, ISO 10002 (complaints management), ISO 10004 (customer satisfaction) and the COPC customer operations standard.</li>
           <li><strong>Policy and procedure architecture.</strong> Full policy and procedure suite, risk and compliance registers, KPI framework and reporting architecture.</li>
@@ -353,7 +359,6 @@
       </div>
     </article>
 
-    <!-- DSC -->
     <article class="record">
       <div class="record-head">
         <h3 data-en="Rebuilding the internal governance model of a sovereign decision-support institution" data-ar="إعادة بناء نموذج الحوكمة الداخلي لجهة سيادية لدعم القرار">Rebuilding the internal governance model of a sovereign decision-support institution</h3>
@@ -376,7 +381,6 @@
       </div>
     </article>
 
-    <!-- MoMRAH -->
     <article class="record">
       <div class="record-head">
         <h3 data-en="Governance and operating model for the ministry's emergency &amp; crisis management centre" data-ar="الحوكمة والنموذج التشغيلي لمركز إدارة الطوارئ والأزمات بالوزارة">Governance and operating model for the ministry's emergency &amp; crisis management centre</h3>
@@ -396,7 +400,6 @@
       </div>
     </article>
 
-    <!-- Aldrees -->
     <article class="record">
       <div class="record-head">
         <h3 data-en="Enterprise risk assessment and three-year internal audit plan" data-ar="تقييم المخاطر المؤسسية وخطة المراجعة الداخلية لثلاث سنوات">Enterprise risk assessment and three-year internal audit plan</h3>
@@ -412,7 +415,6 @@
       </div>
     </article>
 
-    <!-- Naqi -->
     <article class="record">
       <div class="record-head">
         <h3 data-en="Internal audit advisory: risk registers and three-year audit plan" data-ar="استشارات المراجعة الداخلية: سجلات المخاطر وخطة ثلاث سنوات">Internal audit advisory: risk registers and three-year audit plan</h3>
@@ -428,7 +430,6 @@
       </div>
     </article>
 
-    <!-- SREAC -->
     <article class="record">
       <div class="record-head">
         <h3 data-en="Procedural manual: 75+ process maps for a national arbitration body" data-ar="الدليل الإجرائي: أكثر من ٧٥ خريطة إجراءات لجهة تحكيم وطنية">Procedural manual: 75+ process maps for a national arbitration body</h3>
@@ -444,7 +445,6 @@
       </div>
     </article>
 
-    <!-- FEASIBILITY -->
     <article class="record">
       <div class="record-head">
         <h3 data-en="Market entry and investment feasibility studies" data-ar="دراسات جدوى دخول السوق والاستثمار">Market entry and investment feasibility studies</h3>
@@ -466,7 +466,6 @@
       </div>
     </article>
 
-    <!-- BIDS & PROPOSALS -->
     <article class="record">
       <div class="record-head">
         <h3 data-en="Technical proposals and business cases for Saudi public tenders" data-ar="العروض الفنية ودراسات الجدوى للمنافسات الحكومية">Technical proposals and business cases for Saudi public tenders</h3>
@@ -500,7 +499,7 @@
           <li>The <strong>last line before the Ombudsman</strong> at Vodafone UK — trained by Ombudsman trainers in resolving cases before they left the company</li>
           <li>Top achiever on <strong>NPS</strong> and <strong>Next Best Offer</strong> cross-sell — upgrades, add-ons, hardware</li>
           <li>Total manager of an outsourced contact-centre team; real-time management, QA, knowledge base, coaching</li>
-          <li>Championed <strong>three core system migrations</strong> — loans, debit cards, CRM</li>
+          <li>Championed <strong>three core system migrations</strong> — loans, cards, CRM</li>
           <li>Tested controls and followed remediation to closure as an internal audit officer</li>
         </ul>
       </div>
@@ -559,7 +558,7 @@
       <div>
         <div class="track-title" data-en="Customer Service Team Lead" data-ar="قائدة فريق خدمة العملاء">Customer Service Team Lead</div>
         <div class="track-org">Emirates NBD · Cairo</div>
-        <div class="track-desc">Total manager of an outsourced contact-centre team — performance and administration — against service level, AHT, first-contact-resolution, quality, CSAT and NPS targets. Shift leadership and real-time management. Live escalation handling and stuck-ticket resolution. Quality assurance through call listening and review of chat and email quotas. Owned the knowledge base and cascaded new knowledge to the floor. Designed a unified CRM ticket template so downstream teams received every field needed to close a case first time. <strong>Championed three core system migrations</strong> — loans, debit cards and CRM.</div>
+        <div class="track-desc">Total manager of an outsourced contact-centre team — performance and administration — against service level, AHT, first-contact-resolution, quality, CSAT and NPS targets. Shift leadership and real-time management. Live escalation handling and stuck-ticket resolution. Quality assurance through call listening and review of chat and email quotas. Owned the knowledge base and cascaded new knowledge to the floor. Designed a unified CRM ticket template so downstream teams received every field needed to close a case first time. <strong>Championed three core system migrations</strong> — loans, cards and CRM.</div>
       </div>
     </div>
 
@@ -648,7 +647,6 @@
   </div>
 </footer>
 
-
 <script>
 (function(){
   var els = document.querySelectorAll('[data-en][data-ar]');
@@ -667,17 +665,3 @@
 </script>
 </body>
 </html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fatimah Elteliny | Portfolio</title>
-
-    <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "xm0d1qmdfk");
-    </script>
-
-</head>
